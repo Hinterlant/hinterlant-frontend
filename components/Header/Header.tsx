@@ -37,9 +37,9 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="/contact" className="nav-link">
-                Contact
-              </a>
+              <Link href={"/contact"}>
+                <a className="nav-link">Contact</a>
+              </Link>
             </li>
           </ul>
 
@@ -59,20 +59,19 @@ export default function Header() {
           {/* Navbar Action Button */}
           <ul className="navbar-nav action">
             <li className="nav-item">
-              <a
-                href="/wallet-connect"
-                className="btn ml-lg-auto btn-bordered-white"
-              >
-                <i className="icon-wallet mr-md-2" />
-                Connect Wallet
-              </a>
+              <Link href={"/wallet-connect"}>
+                <a className="btn ml-lg-auto btn-bordered-white">
+                  <i className="icon-wallet mr-md-2" />
+                  Connect Wallet
+                </a>
+              </Link>
             </li>
           </ul>
           {/* Navbar Icons */}
-          <ul className="navbar-nav icons">
+          <ul className="navbar-nav action">
             <li className="nav-item">
               <Link href={"/auth/login"}>
-                <a className="btn ml-lg-3 btn-bordered-white">
+                <a className="btn ml-lg-3 ml-2 btn-bordered-white">
                   <i className="icon-user" />
                 </a>
               </Link>

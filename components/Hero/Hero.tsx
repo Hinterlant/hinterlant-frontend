@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Hero() {
   const [initData, setInitData] = useState({
@@ -27,10 +28,12 @@ export default function Hero() {
                   <i className="icon-rocket mr-2" />
                   Explore IGOs
                 </a>
-                <a className="btn btn-bordered-white" href="/apply">
-                  <i className="icon-note mr-2" />
-                  Apply Now
-                </a>
+                <Link href={"/apply"}>
+                  <a className="btn btn-bordered-white">
+                    <i className="icon-note mr-2" />
+                    Apply Now
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

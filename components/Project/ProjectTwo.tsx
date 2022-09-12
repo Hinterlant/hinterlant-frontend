@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
-
-const ProjectTwo = () => {
+import { useState } from "react";
+import Image from "next/future/image";
+export default function ProjectTwo() {
   const sampleData = [
     {
       id: "1",
@@ -53,13 +53,13 @@ const ProjectTwo = () => {
       amount: "$0.43615",
     },
   ];
-  const [initData, setInitData] = useState({
+  const [initData] = useState({
     sub_heading: "Exclusive",
     heading: "Previous IGO",
     btn: "View All",
     actionBtn: "Load More",
   });
-  const [data, setData] = useState(sampleData);
+  const [data] = useState(sampleData);
 
   return (
     <section className="explore-area prev-project-area load-more p-0">
@@ -87,10 +87,12 @@ const ProjectTwo = () => {
                 <div className="card project-card prev-project-card">
                   <div className="project-content d-md-flex flex-column flex-md-row align-items-center justify-content-md-between">
                     <div className="item-header d-flex align-items-center mb-4 mb-md-0">
-                      <img
+                      <Image
                         className="card-img-top avatar-max-lg"
-                        src={item.img}
                         alt=""
+                        src={item.img}
+                        width={96}
+                        height={96}
                       />
                       <div className="content ml-4">
                         <h4 className="m-0">{item.title}</h4>
@@ -98,7 +100,14 @@ const ProjectTwo = () => {
                       </div>
                     </div>
                     <div className="blockchain d-inline-block mr-1 mr-md-0">
-                      <img src={item.blockchain} alt="" />
+                      <Image
+                        className="card-img-top avatar-max-lg"
+                        alt=""
+                        width={35}
+                        height="0"
+                        style={{ width: "100%", height: "auto" }}
+                        src={item.blockchain}
+                      />
                     </div>
                     <div className="single-item">
                       <span>{item.publish}</span>
@@ -131,5 +140,4 @@ const ProjectTwo = () => {
       </div>
     </section>
   );
-};
-export default ProjectTwo;
+}

@@ -1,7 +1,8 @@
-import React, { Component, useEffect, useState } from "react";
 import axios from "axios";
 import { ICta } from "models/ICta";
-
+import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 const BASE_URL =
   "https://my-json-server.typicode.com/themeland/gameon-json/cta";
 
@@ -23,21 +24,22 @@ export default function Cta() {
           <div className="col-12 card">
             <div className="row align-items-center justify-content-center">
               <div className="col-12 col-md-5 text-center">
-                <img src={data?.img} alt="" />
+                <Image alt="" width={300} height={319} src={data?.img ?? ""} />
               </div>
               <div className="col-12 col-md-6 mt-4 mt-md-0">
                 <h2 className="m-0">{data?.title}</h2>
                 <p>{data?.content}</p>
-                <a
-                  className="btn btn-bordered active d-inline-block"
-                  href="/apply"
-                >
-                  <i className={data?.btnIcon} />
-                  {data?.btn}
-                </a>
+                <Link href="/apply">
+                  <a className="btn btn-bordered active d-inline-block">
+                    <i className={data?.btnIcon} />
+                    {data?.btn}
+                  </a>
+                </Link>
               </div>
             </div>
-            <a className="cta-link" href="/apply" />
+            <Link href="/apply">
+              <a className="cta-link" />
+            </Link>
           </div>
         </div>
       </div>

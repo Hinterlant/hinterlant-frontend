@@ -1,6 +1,7 @@
 import axios from "axios";
 import { IWallet } from "models/IWallet";
 import { useEffect, useState } from "react";
+import Image from "next/future/image";
 
 const BASE_URL =
   "https://my-json-server.typicode.com/themeland/gameon-json-1/wallet";
@@ -38,7 +39,13 @@ export default function Wallet() {
                 {/* Single Wallet */}
                 <div className="card single-wallet">
                   <a className="d-block text-center" href="/login">
-                    <img className="avatar-lg" src={item.img} alt="" />
+                    <Image
+                      src={item.img}
+                      alt={""}
+                      height={80}
+                      width={80}
+                      className="avatar-lg"
+                    />
                     <h4 className="mb-0">{item.title}</h4>
                     <p>{item.content}</p>
                   </a>

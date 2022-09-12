@@ -1,15 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const BASE_URL =
-  "https://my-json-server.typicode.com/themeland/gameon-json/footer";
-
 export default function Footer() {
-  const [data, setData] = useState({
+  const [data] = useState({
     copyright: "©2022 IGOPAD, All Rights Reserved By",
     img: "/img/logo.png",
   });
-  const [socialData, setSocialData] = useState([
+  const [socialData] = useState([
     {
       id: 1,
       link: "https://www.facebook.com/",
@@ -41,7 +39,7 @@ export default function Footer() {
       icon: "icon-social-youtube",
     },
   ]);
-  const [widgetData, setWidgetData] = useState([
+  const [widgetData] = useState([
     {
       id: 1,
       text: "Home",
@@ -79,7 +77,7 @@ export default function Footer() {
               {/* Logo */}
               <Link href="/">
                 <a className="navbar-brand">
-                  <img src={data.img} alt="" />
+                  <Image width={43} height={52} src={data.img} alt="" />
                 </a>
               </Link>
               {/* Social Icons */}
@@ -118,28 +116,3 @@ export default function Footer() {
     </footer>
   );
 }
-/* class Footer extends Component {
-  state = {
-    data: {},
-    socialData: [],
-    widgetData: [],
-  };
-  componentDidMount() {
-    axios
-      .get(`${BASE_URL}`)
-      .then((res) => {
-        this.setState({
-          data: res.data,
-          socialData: res.data.socialData,
-          widgetData: res.data.widgetData,
-        });
-        // console.log(data)
-      })
-      .catch((err) => console.log(err));
-  }
-  render() {
-    return (
-      
-    );
-  }
-} */
