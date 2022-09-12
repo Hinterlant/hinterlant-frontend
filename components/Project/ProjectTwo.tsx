@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/future/image";
+import Swiper from "swiper";
 export default function ProjectTwo() {
-  const sampleData = [
+  const data = [
     {
       id: "1",
       img: "/img/thumb_6.png",
@@ -59,8 +60,46 @@ export default function ProjectTwo() {
     btn: "View All",
     actionBtn: "Load More",
   });
-  const [data] = useState(sampleData);
 
+  useEffect(() => {
+    if (window && typeof window != "undefined") {
+      const $ = require("jquery");
+      $(".load-more .item").slice(0, 4).show();
+      $(".blog-area.load-more .item").slice(0, 6).show();
+
+      $("#load-btn").on("click", function (e: any) {
+        e.preventDefault();
+
+        $(".load-more .item:hidden").slice(0, 4).slideDown();
+        $(".blog-area.load-more .item:hidden").slice(0, 6).slideDown();
+
+        if ($(".load-more .item:hidden").length == 0) {
+          $("#load-btn").fadeOut("slow");
+        }
+      });
+
+      new Swiper(".slider-mid", {
+        autoplay: true,
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+          767: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1023: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  }, []);
   return (
     <section className="explore-area prev-project-area load-more p-0">
       <div className="container">
