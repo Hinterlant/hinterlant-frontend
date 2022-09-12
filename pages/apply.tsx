@@ -1,15 +1,15 @@
-import Contact from "@components/Contact/Contact";
+import Apply from "@components/Apply/Apply";
 import Header from "@components/Header/Header";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-const ContactPage: NextPage = () => {
+const ApplyPage: NextPage = () => {
   return (
     <div>
-      <NextSeo title="Contact" />
+      <NextSeo title="Apply" />
       <Header />
-      <Contact />
+      <Apply />
     </div>
   );
 };
-export default ContactPage;
+export default ApplyPage;

@@ -71,9 +71,11 @@ export default function Header() {
           {/* Navbar Icons */}
           <ul className="navbar-nav icons">
             <li className="nav-item">
-              <a href="#" className="btn ml-lg-3 btn-bordered-white">
-                <i className="icon-user" />
-              </a>
+              <Link href={"/auth/login"}>
+                <a className="btn ml-lg-3 btn-bordered-white">
+                  <i className="icon-user" />
+                </a>
+              </Link>
             </li>
           </ul>
         </div>

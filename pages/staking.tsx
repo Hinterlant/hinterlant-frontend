@@ -1,15 +1,15 @@
-import Contact from "@components/Contact/Contact";
 import Header from "@components/Header/Header";
+import Staking from "@components/Staking/Staking";
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-const ContactPage: NextPage = () => {
+const StakingPage: NextPage = () => {
   return (
     <div>
-      <NextSeo title="Contact" />
+      <NextSeo title="Staking" />
       <Header />
-      <Contact />
+      <Staking />
     </div>
   );
 };
-export default ContactPage;
+export default StakingPage;
